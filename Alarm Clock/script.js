@@ -20,7 +20,13 @@ setInterval(() => {
     }
   }
   const show = async (strong, text, role = "success") => {
-    document.querySelector("#show").innerHTML = ` <div class="alert alert-${role} alert-dismissible fade show alert-shower" role="alert">  <strong>${strong} </strong> ${text} <button type="button" class="close" data-dismiss="alert" aria-label="Close">    <span aria-hidden="true">&times;</span> </button></div>`;
+    if(document.querySelector("#show").children.length<=2){
+
+      document.querySelector("#show").innerHTML = ` ${document.querySelector("#show").innerHTML}<div class="alert alert-${role} alert-dismissible fade show alert-shower" role="alert">  <strong>${strong} </strong> ${text} <button type="button" class="close" data-dismiss="alert" aria-label="Close">    <span aria-hidden="true">&times;</span> </button></div>`;
+    }else{
+      document.querySelector("#show").innerHTML = `<div class="alert alert-${role} alert-dismissible fade show alert-shower" role="alert">  <strong>${strong} </strong> ${text} <button type="button" class="close" data-dismiss="alert" aria-label="Close">    <span aria-hidden="true">&times;</span> </button></div>`;
+
+    }
   }
   const submit = async () => {
     hour = document.querySelector("#h");
@@ -28,10 +34,10 @@ setInterval(() => {
     second = document.querySelector("#s");
     sound.loop = true;
     if ((second.value + minute.value + hour.value) > 0) {
+      show(strong = "Success :", text = `Alarm is  set for ${hour.value + minute.value + second.value} Time`)
       setTimeout(() => {
         try {
           sound.play()
-          show(strong = "Success :", text = `Alarm is  set for ${hour.value + minute.value + second.value} Time`)
         }
         catch {
           console.log(new error("Here is an error : system can't play sound"));
