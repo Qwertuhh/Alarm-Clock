@@ -4,6 +4,8 @@ Welcome to my project repository! This project showcases the various programming
 
 This repository contains an Alarm Clock application that allows users to set alarms and activate a snooze feature based on the specified time.
 
+[click here to hope on site!](https://qwertuhh-alarm-clock.netlify.app)
+
 ## What I had learnt
 
 - API
