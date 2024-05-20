@@ -9,6 +9,7 @@ This repository contains an Alarm Clock application that allows users to set ala
 - API
 - Audio fetch method
 - shortcut key handeling
+- favicon
 
 ## Acknowledgements
 
